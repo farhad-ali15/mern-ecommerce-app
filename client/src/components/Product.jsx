@@ -3,6 +3,7 @@ import {
   FavoriteBorderOutlined,
   SearchOutlined,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Info = styled.div`
@@ -38,12 +39,13 @@ const Circle = styled.div`
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-color: white;
+  background-color: #f7f0f0;
   position: absolute;
 `;
 
 const Image = styled.img`
   height: 75%;
+  width: 80%;
   z-index: 2;
 `;
 
@@ -73,7 +75,9 @@ const Product = ({ item }) => {
           <AddShoppingCartOutlined />
         </Icon>
         <Icon>
-          <SearchOutlined />
+          <Link to={`/product/${item._id}`}>
+            <SearchOutlined />
+          </Link>
         </Icon>
         <Icon>
           <FavoriteBorderOutlined />

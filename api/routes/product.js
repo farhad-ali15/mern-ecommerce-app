@@ -16,7 +16,9 @@ const productRouter = express.Router();
 
 productRouter.route("/add-product").post(verifyTokenAndAdmin, createNewProduct);
 productRouter.route("/").get(verifyTokenAndAuthorization, getAllProducts);
-productRouter.route("/:id").get(verifyTokenAndAuthorization, getProductById);
+productRouter
+  .route("/find/:id")
+  .get(verifyTokenAndAuthorization, getProductById);
 productRouter
   .route("/update-product/:id")
   .put(verifyTokenAndAdmin, updateProduct);

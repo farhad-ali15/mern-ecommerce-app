@@ -17,7 +17,15 @@ config();
 const app = express();
 app.use(bodyParser.json()); // Global middleware
 app.use(cookieParser());
-app.use(cors({ origin: ["http://localhost:3000", "http://localhost:4000"] }));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:4000",
+      "http://localhost:3001",
+    ],
+  })
+);
 
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
