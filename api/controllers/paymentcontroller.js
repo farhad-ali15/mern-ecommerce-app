@@ -1,31 +1,3 @@
-// import Stripe from "stripe";
-
-// export const createNewPayment = async (req, res, next) => {
-//   const KEY = process.env.STRIPE_KEY;
-//   const stripe = new Stripe(KEY);
-
-//   let { amount, id } = req.body;
-//   try {
-//     const payment = await stripe.paymentIntents.create({
-//       amount,
-//       currency: "USD",
-//       description: "ABC INC.",
-//       source: id,
-//     });
-//     console.log("Payment", payment);
-//     res.json({
-//       message: "Payment successful",
-//       success: true,
-//     });
-//   } catch (error) {
-//     console.log("Error", error);
-//     res.json({
-//       message: "Payment failed",
-//       success: false,
-//     });
-//   }
-// };
-
 // This is your test secret API key.
 import Stripe from "stripe";
 const YOUR_DOMAIN = "http://localhost:3000/pay";

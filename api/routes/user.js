@@ -9,7 +9,6 @@ import {
   createNewUser,
 } from "../controllers/usercontroller.js";
 import {
-  
   verifyTokenAndAdmin,
   verifyTokenAndAuthorization,
 } from "./verifyToken.js";

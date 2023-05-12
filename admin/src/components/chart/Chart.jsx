@@ -11,7 +11,7 @@ import {
 
 import React from "react";
 
-function Chart({ title, data, dataKey, name, grid }) {
+function Chart({ title, data, dataKey, grid }) {
   return (
     <div className="chart">
       <h3 className="chartTitle">{title}</h3>

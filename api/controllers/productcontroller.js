@@ -6,9 +6,7 @@ export const createNewProduct = async (req, res, next) => {
   try {
     const product = await Product.create(req.body);
     if (product) {
-      res.json({
-        message: "new Product has been created",
-      });
+      res.json(product);
     }
   } catch (err) {
     next(err);

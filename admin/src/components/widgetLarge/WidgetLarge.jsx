@@ -1,8 +1,7 @@
 import { userRequest } from "../../requestMethods";
 import "./widgetLarge.css";
 import React, { useEffect, useState } from "react";
-import { format } from "timeago.js";
-
+import { format, render, cancel, register } from "timeago.js";
 function WidgetLarge() {
   const [orders, setOrders] = useState([]);
 
@@ -34,7 +33,7 @@ function WidgetLarge() {
         </thead>
         <tbody>
           {orders.map((order) => (
-            <tr className="widgetLgTr">
+            <tr className="widgetLgTr" key={order._id}>
               <td className="widgetLgUser">
                 <span className="widgetLgName">{order.userId}</span>
               </td>

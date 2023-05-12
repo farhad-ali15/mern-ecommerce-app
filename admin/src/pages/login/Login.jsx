@@ -4,6 +4,7 @@ import { mobile } from "../../responsive.js";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../redux/apiCalls.js";
+import { useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -77,6 +78,7 @@ const Error = styled.span`
 `;
 
 const Login = () => {
+  const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const { isFetching, error } = useSelector((state) => state.user);
@@ -84,6 +86,7 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     login(dispatch, { userName, password });
+    navigate("/");
   };
   return (
     <Container>

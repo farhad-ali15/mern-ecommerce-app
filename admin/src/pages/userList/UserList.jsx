@@ -63,6 +63,7 @@ function UserList() {
   return (
     <div className="userList">
       <DataGrid
+        getRowId={(row) => row.id}
         rows={data}
         disableRowSelectionOnClick
         columns={columns}
